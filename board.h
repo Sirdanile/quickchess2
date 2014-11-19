@@ -794,8 +794,28 @@ bool board::isinvector(vector<pair <int, int> > v,pair <int,int> p1){
 
 /*vector<board> board::expand()
 {
-		
-	
+
+	//Roughly need: generateMoves needs to check validity before returning,
+	//move needs to assign a h' value to each new board state as it's made
+	vector<pair <int, int> > expansion;
+	vector<board> moveListFinal;
+	//This generates all of the boards that arise from movement
+	for(int i = 0; i < TheBoard.size(); i++)
+	{
+	//if this keyword uses pointers instead of copying, we'll need a copy constructor here...
+	//also the use of this in this.generateMoves feels weird, the pieces themselves should probably generate their moves
+	//with this the code would be ncier looking like expansion = TheBoard[i].generateMoves();
+		expansion = (this.generateMoves(TheBoard[i]);
+		for(int j = 0; j < expansion.size(); j++)
+		{
+			board temp = this;
+			//because of this step, we need move to update the h' value of the board
+			//and not this function
+			temp.move(TheBoard[i], expansion[j]);
+			moveListFinal.push_back(temp);
+		}
+	}
+	return moveListFinal;
 } */
 
 #endif
