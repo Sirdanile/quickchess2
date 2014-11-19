@@ -31,6 +31,7 @@ public:
 	void startingmove(int n);
 	int getplayer();
 	bool isvalid(pair <int,int> p1, pair <int,int> p2);
+	//vector<board> expand();
 	
 	vector<pair <int, int> > generatemoves(pair <int,int> p1);
 	bool isinvector(vector<pair <int, int> > v,pair <int,int> p1);
@@ -790,5 +791,11 @@ bool board::isinvector(vector<pair <int, int> > v,pair <int,int> p1){
 	}
 	return false;
 }
+
+/*vector<board> board::expand()
+{
+		
+	
+} */
 
 #endif
